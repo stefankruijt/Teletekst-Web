@@ -10,10 +10,11 @@
       	ini_set('display_errors', '1');
       	date_default_timezone_set('Europe/Amsterdam');
     ?>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 	<script src="jqueryCookie.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	
 	<style>
 			body { font-size: 62.5%; }
@@ -99,17 +100,15 @@
 		    <div class="simpleTabsContent">
 		     <?php 
         			require 'dbconfig.php';
-        			include "tabs/sportTab.php"; 
+        			//include "tabs/sportTab.php"; 
         		?>
         	</div>
         	<div class="simpleTabsContent">
 		     <?php 
         			require 'dbconfig.php';
-        			include "tabs/sportExtraTab.php"; 
+        			//include "tabs/sportExtraTab.php"; 
         		?>
         	</div>
 		  </div> 
-	
-</body>
+	</body>
 </html>
- 
