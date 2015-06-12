@@ -2,12 +2,12 @@ module.exports = function(grunt) {
    grunt.initConfig({
       php: {
          dist: {
-         options: {
-            hostname: '127.0.0.1',
-            port: 9000,
-            base: '.', // Project root 
-            keepalive: true,
-            open: false
+            options: {
+               hostname: '127.0.0.1',
+               port: 9000,
+               base: '.', // Project root 
+               keepalive: true,
+               open: false
             }
          }
       },
@@ -33,14 +33,21 @@ module.exports = function(grunt) {
             }
          }
       },
+      watch: {
+         livereload: {
+            options: {
+                  livereload: 35729 
+               },
+            files: ['*']
+         }
+      }
    });
    
    grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks('grunt-php');
-   grunt.loadNpmTasks('grunt-browser-sync'); 
-   
+
    grunt.registerTask('default', [
-      'php',         
-      'browserSync', 
+      'php:dist',    
+      'watch',
    ]);
 }
