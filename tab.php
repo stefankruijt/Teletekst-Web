@@ -1,11 +1,21 @@
 <?php
+   $pagenumberText = ($countUp > 0) ? $countUp : "";
+   $i = 0;
    if ($result = $mysqli->query($query)) {
       echo "<div id=\"accordion\" class=\"accordion\">";
       while ($row = $result->fetch_assoc()) {
          $extraText = ($row['broadcast'] == 0) ? "<b>Bericht wordt niet uitgezonden!</b>" : "";
          $extraStyling = ($row['item_checked']==0) ?  "style=\"background:none;background-color:yellow;\"" : "style=\"background:none;background-color:lightgreen;\"";
 		 	
-		   echo "<h3 ".$extraStyling.">".$row['publication_title']."\r  ".$extraText."</h3>";
+         if($i>($maxBroadcast-1) || $row['broadcast'] == 0) {
+            $extratext = "";
+         }
+         else {
+            $extratext = $pagenumberText;
+            $pagenumberText++;
+         }
+
+		   echo "<h3 ".$extraStyling."><b>".$extratext."</b> : ".$row['publication_title']."\r  ".$extraText."</h3>";
 		   echo "<div>";		
          ?>
             <div class="panel panel-info">
@@ -28,6 +38,7 @@
                </div>
             </div>
          <?php
+         $i++;
 	   }			
 	   echo "</div>";
 	}
