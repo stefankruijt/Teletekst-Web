@@ -41,7 +41,15 @@
 		   echo "<textarea name=\"subpages[]\" cols=\"39\" wrap=\"hard\" style=\"font-family: monospace;font-size: 10pt; resize: none; border: 1px solid #808080; height: 330px; overflow:hidden; background-image: url(backgroundTextArea.png) \">".$splitted[$i]."</textarea>";
 	   }
 	
-	   echo  "</div><input type=\"button\" value=\"Extra subpagina toevoegen\" onClick=\"addExtraSubPageTextarea()\"><input type=\"submit\" value=\"Opslaan\" />
+	   echo  "</div>
+	   			<button type=\"button\" class=\"btn btn-default\" value=\"Extra subpagina toevoegen\" onClick=\"addExtraSubPageTextarea()\">
+	   				<span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></span>
+	   				Extra subpagina toevoegen
+	   			</button>
+	   			<button type=\"submit\" class=\"btn btn-primary\" value=\"Opslaan\">
+	   				<span class=\"glyphicon glyphicon-ok\" aria-hidden=\"true\"></span>
+	   				Opslaan
+	   			</button>
 			    </form>";
 	
 	   echo "<div id=\"message_ajax\"></div>";

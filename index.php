@@ -4,17 +4,29 @@
       <title>WOS Teletekst</title>
 
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	   <link rel="stylesheet" href="/css/wosteletekst.css">
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>      
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-	   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="css/wosteletekst.css">
 
 	   <script>
     	   $(document).ready(function() {
-            $("#accordion, #accordion2, #accordion3").accordion({ collapsible: true, clearStyle: true, heightStyle: "auto"});
+
+            var icons = {
+               header: "ui-icon-circle-arrow-e",
+               activeHeader: "ui-icon-circle-arrow-s"
+            };
+
+            $(function() {
+               $(".accordion").accordion({
+                  collapsible: true,
+                  icons: icons,
+                  heightStyle: "content",
+               });
+            });
 
             function updateTips(t) 
     			{
@@ -33,7 +45,11 @@
 
     				dialog.load(url, {}, function(responseText, textStatus, XMLHttpRequest) 
     				{
-    					dialog.dialog({height: 600, width:700, title:"Bericht aanpassen", modal: true, position: 'top'});					
+    					dialog.dialog({
+                     width: 800,
+                     title: "Bericht aanpassen", 
+                     modal: false, 
+                  });					
     				});
     	    		return false;
     			});
@@ -53,16 +69,16 @@
             var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
             $('a[href=' + anchor + ']').tab('show');
          });
-   </script>
-</head>
-<body>
-  	<div class="container-fluid">
-      <ul class="nav nav-tabs" id="tabs">
-         <li class="active"><a href="#agenda" data-toggle="tab">Agendaberichten</a></li>
-         <li><a href="#nieuws" data-toggle="tab">Nieuwsberichten</a></li>
-         <li><a href="#sport" data-toggle="tab">Sportberichten</a></li>
-         <li><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
-      </ul>
+    </script>
+   </head>
+   <body>
+  	   <div class="container-fluid">
+         <ul class="nav nav-tabs" id="tabs">
+            <li class="active"><a href="#agenda" data-toggle="tab">Agendaberichten</a></li>
+            <li><a href="#nieuws" data-toggle="tab">Nieuwsberichten</a></li>
+            <li><a href="#sport" data-toggle="tab">Sportberichten</a></li>
+            <li><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
+         </ul>
 
       <div class="tab-content">
          <?php  require 'dbconfig.php'; dbConnect(); ?>
@@ -93,6 +109,4 @@
       </div>
       <?php dbClose(); ?>
 	</body>
-
-   
 </html>
