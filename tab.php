@@ -6,7 +6,7 @@
       while ($row = $result->fetch_assoc()) {
          $extraText = ($row['broadcast'] == 0) ? "<b>Bericht wordt niet uitgezonden!</b>" : "";
          $extraStyling = ($row['item_checked']==0) ?  "style=\"background:none;background-color:yellow;\"" : "style=\"background:none;background-color:lightgreen;\"";
-		 	
+         
          if($i>($maxBroadcast-1) || $row['broadcast'] == 0) {
             $extratext = "";
          }
@@ -15,8 +15,8 @@
             $pagenumberText++;
          }
 
-		   echo "<h3 ".$extraStyling."><b>".$extratext."</b> : ".$row['publication_title']."\r  ".$extraText."</h3>";
-		   echo "<div>";		
+         echo "<h3 ".$extraStyling."><b>".$extratext."</b> : ".$row['publication_title']."\r  ".$extraText."</h3>";
+         echo "<div>";     
          ?>
             <div class="panel panel-info">
                <div class="panel-heading">
@@ -39,7 +39,7 @@
             </div>
          <?php
          $i++;
-	   }			
-	   echo "</div>";
-	}
+      }        
+      echo "</div>";
+   }
 ?>

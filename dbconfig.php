@@ -5,10 +5,10 @@
    $date = new DateTime(); 
 
    $db = array (
-	  'host' => '127.0.0.1:3306',
-	  'user' => 'username',
-	  'pass' => 'password',
-	  'dbname' => 'WOSTeletekst'
+     'host' => '127.0.0.1:3306',
+     'user' => 'username',
+     'pass' => 'password',
+     'dbname' => 'WOSTeletekst'
    );
 
    $mysqli = new mysqli($db['host'],  $db['user'], $db['pass'], $db['dbname']);

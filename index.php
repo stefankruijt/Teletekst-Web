@@ -8,12 +8,12 @@
       <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
       <link rel="stylesheet" href="css/wosteletekst.css">
 
-	   <script>
-    	   $(document).ready(function() {
+     <script>
+         $(document).ready(function() {
 
             var icons = {
                header: "ui-icon-circle-arrow-e",
@@ -29,32 +29,32 @@
             });
 
             function updateTips(t) 
-    			{
+          {
                tips.text(t).addClass( "ui-state-highlight" );
                setTimeout(function(){tips.removeClass( "ui-state-highlight", 1500 );}, 500 );
-    			}
+          }
 
-    			$('.loadextradata').on('click', function() 
-    			{
-    	    		var url = this.href;
-    	    		var dialog = $("#dialog");
-    				if (dialog.length == 0) 
-    				{
-    	        		dialog = $('<div id="dialog" style="display:hidden"></div>').appendTo('body');
-    				}
+          $('.loadextradata').on('click', function() 
+          {
+              var url = this.href;
+              var dialog = $("#dialog");
+            if (dialog.length == 0) 
+            {
+                  dialog = $('<div id="dialog" style="display:hidden"></div>').appendTo('body');
+            }
 
-    				dialog.load(url, {}, function(responseText, textStatus, XMLHttpRequest) 
-    				{
-    					dialog.dialog({
+            dialog.load(url, {}, function(responseText, textStatus, XMLHttpRequest) 
+            {
+              dialog.dialog({
                      width: 800,
                      title: "Bericht aanpassen", 
                      modal: false, 
-                  });					
-    				});
-    	    		return false;
-    			});
-    		});    	    
-		</script>
+                  });         
+            });
+              return false;
+          });
+        });         
+    </script>
       <script>
          $(document).ready(function() {
             if(location.hash) {
@@ -72,7 +72,7 @@
     </script>
    </head>
    <body>
-  	   <div class="container-fluid">
+       <div class="container-fluid">
          <ul class="nav nav-tabs" id="tabs">
             <li class="active"><a href="#agenda" data-toggle="tab">Agendaberichten</a></li>
             <li><a href="#nieuws" data-toggle="tab">Nieuwsberichten</a></li>
@@ -116,5 +116,5 @@
          </div>
       </div>
       <?php dbClose(); ?>
-	</body>
+  </body>
 </html>
