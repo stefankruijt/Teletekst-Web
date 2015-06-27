@@ -8,7 +8,7 @@ $text                =  $_POST['subpages'];
 $category            =  $_POST['item_category'];
 $publication_title   =  $_POST['publication_title'];
 $broadcast           =  0;
- 
+
 $finalText = "";
 $first = true;
 
@@ -37,7 +37,15 @@ if(isset($_POST['broadcast'])){
    $broadcast = 1;
 }
 
-$updateItemQuery = "UPDATE items SET publication_text = '".mysqli_real_escape_string($mysqli, $finalText)."', item_checked=1, broadcast=".$broadcast.", publication_title = '".mysqli_real_escape_string($mysqli, $publication_title)."' WHERE item_id = '".$item_id."'";
+$updateItemQuery = "update items set 
+                       publication_text = \"".mysqli_real_escape_string($mysqli, $finalText)."\"
+                      ,item_checked=\"1\"
+                      ,broadcast = \"".$broadcast."\"
+                      ,publication_title = \"".mysqli_real_escape_string($mysqli, $publication_title)."\"
+                    where item_id = \"$item_id\";";
+
+echo $updateItemQuery;
+
 $result1 = mysqli_query($mysqli, $updateItemQuery) or die(mysqli_error($mysqli));
 
 if($category == "nieuws" || $category == "sport") {

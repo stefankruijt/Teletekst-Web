@@ -25,25 +25,29 @@
                   <h3 class="panel-title">Huidige teletekst weergave</h3>
                </div>
                <div class="panel-body">
-                  <input type="text" name="titel" 
-                     value="<?php echo strtoupper($message['publication_title']) ?>" size="35" 
-                     style="font-family: monospace;font-size: 10pt; resize: none" readonly="readonly"/>
-               
-                  <?php
-                     foreach(explode("#NEWSUBPAGE#", $message['publication_text']) as $value) {
-                        echo "<textarea name=\"subpages[]\" style=\"font-family: monospace; font-size: 10pt; 
-                        resize: none; background:#CBFFB3; overflow:hidden;\" wrap=\"hard\" 
-                        readonly=\"readonly\" cols=\"39\" rows=\"19\">".$value."</textarea>";
-                     }
-                  ?>
+                  <div class="col-sm-12" style="padding-left:0px; padding-bottom:5px">
+                     <input type="text" class="form-control" id="timestamp" name="timestamp" 
+                        value="<?php echo strtoupper($message['publication_title']) ?>" readonly>
+                  </div>
+                  
+                  <div class="col-sm-12" style="padding-left:0px; padding-bottom:5px">
+                     <?php
+                        foreach(explode("#NEWSUBPAGE#", $message['publication_text']) as $value) {
+                           echo "<textarea name=\"subpages[]\" style=\"font-family: monospace; font-size: 10pt; 
+                           resize: none; background:#CBFFB3; overflow:hidden;\" wrap=\"hard\" 
+                           readonly=\"readonly\" cols=\"39\" rows=\"19\">".$value."</textarea>";
+                        }
+                     ?>
 
-                  <br />
-                  <a class="loadextradata btn btn-default" href="editDialog.php?id=<?php echo $message['item_id'] ?>">
-                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Bewerk bericht
-                  </a>
+                     <div class="col-sm-12" style="padding-left:0px">
+                        <a class="loadextradata btn btn-default" href="editDialog.php?id=<?php echo $message['item_id'] ?>">
+                           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Bewerk bericht
+                        </a>
+                     </div>
                   </div>   
                </div>
             </div>
+         </div>
          <?php
          $i++;
       }        
