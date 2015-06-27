@@ -5,13 +5,13 @@
    $date = new DateTime(); 
 
    $db = array (
-     'host' => '127.0.0.1:3306',
+     'host' => 'localhost',
      'user' => 'username',
      'pass' => 'password',
-     'dbname' => 'WOSTeletekst'
+     'dbname' => 'wosteletekst'
    );
 
-   $mysqli = new mysqli($db['host'],  $db['user'], $db['pass'], $db['dbname']);
+   $mysqli = new mysqli($db['host'],  $db['user'], $db['pass'], $db['dbname'], 3306);
 
    function dbConnect() {
       global $mysqli;
