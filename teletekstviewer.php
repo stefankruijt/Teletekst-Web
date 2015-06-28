@@ -22,17 +22,13 @@
    }
 </style>
 
-<script>
-   var pagenumber = 100;
-</script
-
 <div class="panel panel-primary" style="padding-bottom:5px">
   <div class="panel-heading">
-    <h3 class="panel-title">Afstandsbediening</h3>
+      <h3 class="panel-title">Afstandsbediening</h3>
   </div>
   <div class="panel-body">
     <div class="input-group col-sm-3">
-      <input id="pagenumber" type="number" class="form-control" placeholder="Typ hier gewenst paginanummer">
+      <input id="pagenumber" type="number" class="form-control" placeholder="Typ hier gewenste paginanummer" />
       <span class="input-group-btn">
          <button class="btn btn-default" type="button" onclick="refresh(document.getElementById('pagenumber'));">
             Wijzig pagina
@@ -47,6 +43,7 @@
    </div>
 
    <script>
+      var pagenumber = 100;
       var d_names = new Array("zo", "ma", "di", "wo", "do", "vr", "za");
       var m_names = new Array("jan", "feb", "mar", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec");
 
