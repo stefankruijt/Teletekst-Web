@@ -42,7 +42,7 @@
             value="<?php echo $row['item_category']?>">
          
          <div class="form-group">
-            <label for="website_title" class="col-sm-2 control-label">Website titel</label>
+            <label for="website_title" class="col-sm-3 control-label">Website titel</label>
             <div class="col-sm-7">
                <input type="text" class="form-control" id="website_title" name="website_title" 
                       value="<?php echo $row['original_title']?>" readonly>
@@ -50,7 +50,7 @@
          </div>
 
          <div class="form-group">
-            <label for="publication_title" class="col-sm-2 control-label">Teletekst titel</label>
+            <label for="publication_title" class="col-sm-3 control-label">Teletekst titel</label>
             <div class="col-sm-7">
                <input type="text" class="form-control" id="publication_title" name="publication_title" 
                       value="<?php echo $row['publication_title']?>"
@@ -60,7 +60,7 @@
          </div>
          
          <div class="form-group">
-            <label for="timestamp" class="col-sm-2 control-label">Datum</label>
+            <label for="timestamp" class="col-sm-3 control-label">Datum</label>
             <div class="col-sm-7">
                <input type="text" class="form-control" id="timestamp" name="timestamp" 
                       value="<?php echo strtoupper($row['timestamp']) ?>" readonly>
@@ -68,7 +68,7 @@
          </div>
 
          <div class="form-group">
-            <label for="broadcast" class="col-sm-2 control-label">Uitzenden</label>
+            <label for="broadcast" class="col-sm-3 control-label">Uitzenden</label>
             <div class="col-sm-1">
                <input type="checkbox" class="form-control" id="broadcast" name="broadcast" 
                   <?php echo $extraStyling; ?> readonly>

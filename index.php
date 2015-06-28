@@ -78,6 +78,7 @@
             <li><a href="#nieuws" data-toggle="tab">Nieuwsberichten</a></li>
             <li><a href="#sport" data-toggle="tab">Sportberichten</a></li>
             <li><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
+            <li><a href="#teletekstviewer" data-toggle="tab">Teletekst kijken</a></li>
          </ul>
 
       <div class="tab-content">
@@ -112,6 +113,11 @@
                $countUp = 0;
                $maxBroadcast = 0;                
                include "tab.php"; 
+            ?>
+         </div>
+         <div class="tab-pane fade" id="teletekstviewer">
+            <?php 
+               include "teletekstviewer.php"; 
             ?>
          </div>
       </div>
