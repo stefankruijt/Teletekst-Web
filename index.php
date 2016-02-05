@@ -75,7 +75,6 @@
        <div class="container-fluid">
          <ul class="nav nav-tabs" id="tabs">
             <li class="active"><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
-            <li><a href="#teletekstviewer" data-toggle="tab">Teletekst kijken</a></li>
          </ul>
 
       <div class="tab-content">
@@ -86,11 +85,6 @@
                $countUp = 0;
                $maxBroadcast = 0;                
                include "tab.php"; 
-            ?>
-         </div>
-         <div class="tab-pane fade" id="teletekstviewer">
-            <?php 
-               include "teletekstviewer.php"; 
             ?>
          </div>
       </div>
