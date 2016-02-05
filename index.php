@@ -74,40 +74,13 @@
    <body>
        <div class="container-fluid">
          <ul class="nav nav-tabs" id="tabs">
-            <li class="active"><a href="#agenda" data-toggle="tab">Agendaberichten</a></li>
-            <li><a href="#nieuws" data-toggle="tab">Nieuwsberichten</a></li>
-            <li><a href="#sport" data-toggle="tab">Sportberichten</a></li>
-            <li><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
+            <li class="active"><a href="#sportExtra" data-toggle="tab">Sport extra</a></li>
             <li><a href="#teletekstviewer" data-toggle="tab">Teletekst kijken</a></li>
          </ul>
 
       <div class="tab-content">
          <?php  require 'dbconfig.php'; dbConnect(); ?>
-         <div class="tab-pane fade in active" id="agenda">
-            <?php           
-               $query = "select * from items where item_category='agenda' AND timestamp > '".$date->format('Y-m-d H:i:s')."' order by timestamp limit 100";
-               $countUp = 302;
-               $maxBroadcast = 100;
-               include "tab.php"; 
-            ?> 
-         </div>
-         <div class="tab-pane fade" id="nieuws">
-            <?php
-               $query = "SELECT * FROM items WHERE item_category='nieuws' ORDER BY timestamp DESC LIMIT 30";
-               $countUp = 103;
-               $maxBroadcast = 18;
-               include "tab.php"; 
-            ?>
-         </div>
-         <div class="tab-pane fade" id="sport">
-            <?php
-               $query = "SELECT * FROM items WHERE item_category='sport' ORDER BY timestamp DESC LIMIT 20";
-               $countUp = 650;
-               $maxBroadcast = 5;
-               include "tab.php"; 
-            ?>
-         </div>
-         <div class="tab-pane fade" id="sportExtra">
+         <div class="tab-pane fade-in active" id="sportExtra">
             <?php
                $query = "SELECT * FROM items WHERE item_category='sportExtra'";
                $countUp = 0;
